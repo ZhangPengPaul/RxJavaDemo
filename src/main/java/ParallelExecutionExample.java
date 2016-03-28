@@ -22,7 +22,7 @@ public class ParallelExecutionExample {
             Observable<String> imageUrl = getProductImage(t.getPorductId())
                     .doOnCompleted(() -> logTime("getProductImage[" + t.getPorductId() + " completed]", startTime));
 
-            return Observable.zip(reviews, imageUrl, (r, u) -> new TileResponse(t, r, u))
+            return Observable.zip(reviews, imageUrl, (r, i) -> new TileResponse(t, r, i))
                     .doOnCompleted(() -> logTime("zip [" + t.id + "]", startTime));
         });
 
