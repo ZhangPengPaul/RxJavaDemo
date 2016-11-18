@@ -20,6 +20,7 @@
             <artifactId>rxjava-async-util</artifactId>
             <version>0.21.0</version>
         </dependency>
+
     </dependencies>
 
 </project>
